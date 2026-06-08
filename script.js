@@ -8,6 +8,22 @@ gridButton.appendChild(buttonText);
 
 container.appendChild(gridButton);
 
+function randomColoring(gridColor) {
+   const r = Math.floor(Math.random() * 256);
+   const g = Math.floor(Math.random() * 256);
+   const b = Math.floor(Math.random() * 256);
+   const randomColor = `rgb(${r}, ${g}, ${b})`;
+   gridColor.style.backgroundColor = randomColor;
+}
+function dark(gridDark) {
+   let currentOpacity = parseFloat(gridDark.style.opacity) || 0.0;
+   currentOpacity += 0.1;
+   currentOpacity = Number(currentOpacity.toFixed(1));
+   if (currentOpacity > 1.0) {
+      currentOpacity = 1.0;
+   }
+   gridDark.style.opacity = currentOpacity;
+}
 gridButton.addEventListener("click", () => {
    let userInput = prompt("몇 X 몇을 만들까요?", "0");
    container.querySelectorAll(".grid").forEach((grid) => grid.remove());
@@ -25,7 +41,8 @@ gridButton.addEventListener("click", () => {
          grid.style.boxSizing = "border-box";
          container.appendChild(grid);
          grid.addEventListener("mouseover", () => {
-            grid.style.backgroundColor = "black";
+            randomColoring(grid);
+            dark(grid);
          });
       }
    }
