@@ -7,8 +7,10 @@ const buttonText = document.createTextNode("new");
 gridButton.appendChild(buttonText);
 
 container.appendChild(gridButton);
+
 gridButton.addEventListener("click", () => {
-   const userInput = prompt("몇 X 몇을 만들까요?", "0");
+   let userInput = prompt("몇 X 몇을 만들까요?", "0");
+   container.querySelectorAll(".grid").forEach((grid) => grid.remove());
    if (Number(userInput) > 100) {
       alert("다시 입력하세요");
       return;
@@ -22,6 +24,9 @@ gridButton.addEventListener("click", () => {
          grid.style.height = `calc(100% / ${userInput})`;
          grid.style.boxSizing = "border-box";
          container.appendChild(grid);
+         grid.addEventListener("mouseover", () => {
+            grid.style.backgroundColor = "black";
+         });
       }
    }
 });
