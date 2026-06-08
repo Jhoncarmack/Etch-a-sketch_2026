@@ -3,6 +3,8 @@
 마우스를 움직이면 픽셀처럼 색이 칠해지는 스케치 패드 웹 애플리케이션입니다.
 순수 **HTML, CSS, JavaScript**로 구현했으며, [The Odin Project](https://www.theodinproject.com/)의 Foundations 과정 프로젝트입니다.
 
+**[🔗 라이브 데모 바로가기](https://jhoncarmack.github.io/Etch-a-sketch_2026/)**
+
 ## 📌 프로젝트 소개
 
 화면에 16x16 정사각형 그리드를 만들고, 마우스가 칸 위를 지나가면 색이 칠해져
